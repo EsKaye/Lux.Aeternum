@@ -4,7 +4,20 @@
 
 > **"Let there be light, and there was light."**
 
-Lux Aeternum is a powerful SDK that enables seamless integration between gaming experiences and smart lighting systems. Built with TypeScript, it provides a unified interface to control various RGB lighting systems (Govee, Philips Hue, etc.) and sync them with game events through the GameDin Network.
+Lux Aeternum is a powerful, TypeScript-based SDK that provides a unified interface for controlling smart lighting systems and integrating them with gaming experiences, home automation, and IoT applications. It supports multiple lighting brands and automation platforms through a modular, extensible architecture.
+
+## 🚀 Features
+
+- **Unified API** for multiple lighting systems (Govee, Philips Hue, LIFX, and more)
+- **Automation Platform** integration (Alexa, Google Home, Home Assistant, HomeKit, SmartThings, IFTTT)
+- **GameDin Network** integration for real-time event synchronization
+- **Event-driven** architecture for reactive lighting effects
+- **TypeScript** support with full type definitions
+- **Extensible** design for adding new device and platform adapters
+- **Cross-platform** - works in Node.js and browser environments
+- **CI/CD** ready with GitHub Actions
+- **Comprehensive** test coverage
+- **Modular** architecture for easy extension
 
 📖 **[Full Documentation](https://github.com/EsKaye/Lux.Aeternum#readme)** |
 [API Reference](https://github.com/EsKaye/Lux.Aeternum/docs/API.md) |
@@ -21,6 +34,13 @@ Lux Aeternum is a powerful SDK that enables seamless integration between gaming 
 
 ## 🚀 Getting Started
 
+### Prerequisites
+
+- Node.js 16.x or later
+- npm, yarn, or pnpm
+- API keys for the services you want to use (Govee, Philips Hue, etc.)
+- For automation platforms: Set up developer accounts as needed
+
 ### Installation
 
 ```bash
@@ -33,6 +53,31 @@ yarn add lux-aeternum
 # Using pnpm
 pnpm add lux-aeternum
 ```
+
+### Development Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/EsKaye/Lux.Aeternum.git
+   cd Lux.Aeternum
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Build the project:
+   ```bash
+   npm run build
+   ```
+
+4. Run tests:
+   ```bash
+   npm test
+   ```
+
+5. Start developing! Check out the `examples/` directory for usage patterns.
 
 ### Basic Usage
 
@@ -92,20 +137,49 @@ await gameDinAdapter.handleEvent({
 });
 ```
 
-## 🔌 Supported Devices
+## 🔌 Supported Devices & Platforms
 
-### Govee
-- Requires: Govee API Key
-- Supported Commands: Power, Color, Brightness
+### Lighting Systems
 
-### Philips Hue
-- Requires: Bridge IP and username
-- Supported Commands: Power, Color, Brightness, Effects
-- [Documentation](docs/philips-hue-adapter.md)
+#### Govee
+- **Requirements**: Govee API Key
+- **Supported Commands**: Power, Color, Brightness, Effects
+- **Documentation**: [Govee Adapter](docs/govee-adapter.md)
 
-### LIFX (Coming Soon)
-- Requires: LIFX API Key
-- Supported Commands: Power, Color, Brightness, Effects
+#### Philips Hue
+- **Requirements**: Bridge IP and username
+- **Supported Commands**: Power, Color, Brightness, Effects, Scenes
+- **Documentation**: [Philips Hue Adapter](docs/philips-hue-adapter.md)
+
+#### LIFX (Coming Soon)
+- **Requirements**: LIFX API Key
+- **Supported Commands**: Power, Color, Brightness, Effects
+
+### Automation Platforms
+
+#### Google Home
+- **Features**: Device discovery, state management, voice control
+- **Documentation**: [Google Home Integration](docs/automation/google-home.md)
+
+#### Home Assistant
+- **Features**: Full home automation integration, device states, automations
+- **Documentation**: [Home Assistant Integration](docs/automation/home-assistant.md)
+
+#### Amazon Alexa
+- **Features**: Voice control, routines, device groups
+- **Documentation**: [Alexa Integration](docs/automation/alexa.md)
+
+#### Apple HomeKit
+- **Features**: Siri control, Home app integration, scenes
+- **Documentation**: [HomeKit Integration](docs/automation/homekit.md)
+
+#### SmartThings
+- **Features**: Smart home automation, device control, routines
+- **Documentation**: [SmartThings Integration](docs/automation/smartthings.md)
+
+#### IFTTT
+- **Features**: Webhook integration, applets, cross-service automation
+- **Documentation**: [IFTTT Integration](docs/automation/ifttt.md)
 
 ## 🎮 GameDin Network Integration
 
@@ -174,10 +248,45 @@ Handles synchronization between GameDin events and lighting effects.
 - `handleEvent(event)`: Process a GameDin event
 - `dispose()`: Clean up resources
 
+## 🛠️ CI/CD Pipeline
+
+Lux Aeternum uses GitHub Actions for continuous integration and deployment. The pipeline includes:
+
+- **Testing**: Runs on Node.js 16.x and 18.x
+- **Code Quality**: Linting and type checking
+- **Build Verification**: Ensures the project builds successfully
+- **Automated Releases**: Publishes to npm when a new release is created
+
+### Workflow Files
+
+- [.github/workflows/ci-cd.yml](.github/workflows/ci-cd.yml): Main CI/CD pipeline
+- [.github/workflows/release.yml](.github/workflows/release.yml): Release automation
+
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) to get started.
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Scripts
+
+- `npm test`: Run tests
+- `npm run build`: Build the project
+- `npm run lint`: Run linter
+- `npm run format`: Format code
+- `npm run docs`: Generate documentation
 
 ## 📄 License
 
-MIT © [Lux Aeternum Team](https://github.com/MKWorldWide/Lux.Aeternum)
+MIT © [Lux Aeternum Team](https://github.com/EsKaye/Lux.Aeternum)
+
+## 📚 Additional Resources
+
+- [API Documentation](https://eskaye.github.io/Lux.Aeternum/)
+- [Examples](examples/)
+- [Changelog](CHANGELOG.md)
+- [Roadmap](ROADMAP.md)
