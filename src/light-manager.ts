@@ -1,5 +1,6 @@
 import { ILightAdapter, IDevice, ILightCommand, ILightEvent, IAdapterConfig } from './interfaces/device.interface';
 import { GoveeAdapter, createGoveeAdapter } from './govee/govee-adapter';
+import { PhilipsHueAdapter, createPhilipsHueAdapter } from './philips-hue/hue-adapter';
 import { Logger } from './utils/logger';
 
 type AdapterType = 'govee' | 'philips-hue' | 'lifx' | string;
@@ -251,3 +252,4 @@ export function createLightManager(config: ILightManagerConfig = {}): LightManag
 
 export * from './interfaces/device.interface';
 export * from './govee/govee-adapter';
+export * from './philips-hue/hue-adapter';

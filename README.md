@@ -6,6 +6,10 @@
 
 Lux Aeternum is a powerful SDK that enables seamless integration between gaming experiences and smart lighting systems. Built with TypeScript, it provides a unified interface to control various RGB lighting systems (Govee, Philips Hue, etc.) and sync them with game events through the GameDin Network.
 
+📖 **[Full Documentation](https://github.com/EsKaye/Lux.Aeternum#readme)** |
+[API Reference](https://github.com/EsKaye/Lux.Aeternum/docs/API.md) |
+[Examples](https://github.com/EsKaye/Lux.Aeternum/examples)
+
 ## 🌟 Features
 
 - **Unified API** for multiple lighting systems (Govee, Philips Hue, and more)
@@ -94,9 +98,10 @@ await gameDinAdapter.handleEvent({
 - Requires: Govee API Key
 - Supported Commands: Power, Color, Brightness
 
-### Philips Hue (Coming Soon)
+### Philips Hue
 - Requires: Bridge IP and username
 - Supported Commands: Power, Color, Brightness, Effects
+- [Documentation](docs/philips-hue-adapter.md)
 
 ### LIFX (Coming Soon)
 - Requires: LIFX API Key
@@ -134,9 +139,17 @@ gameDinAdapter.addEffect({
 });
 ```
 
-## 📚 API Reference
+## 📚 Documentation
 
-### LightManager
+### Adapters
+
+- [Philips Hue Adapter](docs/philips-hue-adapter.md) - Control Philips Hue lights
+- [Govee Adapter](docs/govee-adapter.md) - Control Govee lights
+- [Creating Custom Adapters](docs/creating-adapters.md) - Guide to creating your own adapters
+
+### API Reference
+
+#### LightManager
 
 Core class for managing light adapters and devices.
 

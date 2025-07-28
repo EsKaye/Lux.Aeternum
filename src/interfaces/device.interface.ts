@@ -61,6 +61,8 @@ export interface ILightEvent {
   metadata?: Record<string, unknown>;
 }
 
+import { Logger } from '../utils/logger';
+
 /**
  * Configuration for a light system adapter
  */

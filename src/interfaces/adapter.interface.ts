@@ -1,4 +1,4 @@
-import { IDevice, ILightCommand, ILightEvent, IAdapterConfig } from './device.interface';
+import { IDevice, ILightCommand, ILightEvent } from './device.interface';
 import { Logger } from '../utils/logger';
 
 /**
@@ -19,6 +19,20 @@ export class AdapterError extends Error {
       Error.captureStackTrace(this, AdapterError);
     }
   }
+}
+
+/**
+ * Configuration for a light adapter
+ */
+export interface IAdapterConfig {
+  /** Adapter type/identifier */
+  type: string;
+  /** Whether to enable debug logging */
+  debug?: boolean;
+  /** Custom logger instance to use */
+  logger?: Logger;
+  /** Additional adapter-specific options */
+  [key: string]: any;
 }
 
 /**

@@ -3,22 +3,33 @@ export * from './light-manager';
 
 // Adapter exports
 export * from './govee/govee-adapter';
+export * from './philips-hue/hue-adapter';
 export * from './gamedin/gamedin-adapter';
 
 // Types and utilities
 export * from './interfaces/device.interface';
 
+// Logger
 export { Logger, createLogger } from './utils/logger';
 
-// Re-export types for convenience
-export { GameDinEventType } from './gamedin/gamedin-adapter';
+// Import all the necessary components
+import { createLightManager } from './light-manager';
+import { createGoveeAdapter } from './govee/govee-adapter';
+import { createPhilipsHueAdapter } from './philips-hue/hue-adapter';
+import { createGameDinAdapter, GameDinEventType } from './gamedin/gamedin-adapter';
+import { createLogger } from './utils/logger';
 
-export default {
+// Re-export types for convenience
+export { GameDinEventType };
+
+// Main SDK exports
+const LuxAeternumSDK = {
   // Core
   createLightManager,
   
   // Adapters
   createGoveeAdapter,
+  createPhilipsHueAdapter,
   createGameDinAdapter,
   
   // Constants
@@ -27,3 +38,5 @@ export default {
   // Utilities
   createLogger,
 };
+
+export default LuxAeternumSDK;
