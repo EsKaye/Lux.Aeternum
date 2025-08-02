@@ -9,8 +9,9 @@ Lux Aeternum is a powerful, TypeScript-based SDK that provides a unified interfa
 ## 🚀 Features
 
 - **Unified API** for multiple lighting systems (Govee, Philips Hue, LIFX, and more)
-- **Automation Platform** integration (Alexa, Google Home, Home Assistant, HomeKit, SmartThings, IFTTT)
+- **Divina-L3 Ecosystem** integration for spiritual and ambient lighting experiences
 - **GameDin Network** integration for real-time event synchronization
+- **Automation Platform** integration (Alexa, Google Home, Home Assistant, HomeKit, SmartThings, IFTTT)
 - **Event-driven** architecture for reactive lighting effects
 - **TypeScript** support with full type definitions
 - **Extensible** design for adding new device and platform adapters
@@ -23,14 +24,48 @@ Lux Aeternum is a powerful, TypeScript-based SDK that provides a unified interfa
 [API Reference](https://github.com/EsKaye/Lux.Aeternum/docs/API.md) |
 [Examples](https://github.com/EsKaye/Lux.Aeternum/examples)
 
-## 🌟 Features
+## 🌟 New: Divina-L3 Integration
 
-- **Unified API** for multiple lighting systems (Govee, Philips Hue, and more)
-- **GameDin Network** integration for real-time event synchronization
-- **Event-driven** architecture for reactive lighting effects
-- **TypeScript** support with full type definitions
-- **Extensible** design for adding new device adapters
-- **Cross-platform** - works in Node.js and browser environments
+Seamlessly integrate with the Divina-L3 ecosystem to create immersive, spiritually-inspired lighting experiences:
+
+- **Real-time Sync**: Keep lighting in harmony with user's spiritual state and rituals
+- **Emotional Resonance**: Adaptive lighting based on mood and energy levels
+- **Ritual Support**: Pre-configured lighting presets for spiritual practices
+- **Cross-Device Harmony**: Synchronize lighting across all connected devices
+
+### Getting Started with Divina-L3
+
+```typescript
+import { 
+  createLightManager, 
+  createDivinaL3Adapter, 
+  createProfileSyncService 
+} from 'lux-aeternum';
+
+// Initialize the light manager
+const lightManager = createLightManager();
+
+// Create Divina-L3 adapter
+const divinaAdapter = createDivinaL3Adapter(lightManager, {
+  baseUrl: 'https://api.divina-l3.com/v1',
+  authToken: 'your-auth-token',
+  enableRealtimeSync: true
+});
+
+// Create profile sync service
+const syncService = createProfileSyncService(divinaAdapter);
+
+// Initialize everything
+async function init() {
+  await lightManager.initialize();
+  await divinaAdapter.initialize();
+  await syncService.initialize();
+  
+  console.log('Divina-L3 integration ready!');
+}
+
+init().catch(console.error);
+```
 
 ## 🚀 Getting Started
 
